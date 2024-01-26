@@ -5,13 +5,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-
-/* THIS FILE WAS GENERATED!
- *
- * This file was generated automatically. You may or may not want to
- * edit it directly.
- */
-
 #define MOD_MORPH(NAME, KEY, MOD_KEY) \
   mm_##NAME: mm_##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
@@ -30,17 +23,17 @@
 / {
   behaviors {
     #include "macros.dtsi"
-      #include "version.dtsi"
-      #ifndef VERSION_MACRO
-      macro_ver: macro_ver {
-        compatible = "zmk,behavior-macro";
-        label = "macro_version";
-        #binding-cells = <0>;
-        bindings = <&kp RET>;
-      };
-      #endif
+    #include "version.dtsi"
+    #ifndef VERSION_MACRO
+    macro_ver: macro_ver {
+      compatible = "zmk,behavior-macro";
+      label = "macro_version";
+      #binding-cells = <0>;
+      bindings = <&kp RET>;
+    };
+    #endif
 
-    // various keys for Programmers Dvorak
+    // Special keys for Programmers Dvorak
 
     MOD_MORPH(pdequal, AMPERSAND, PERCENT)
 
@@ -76,41 +69,41 @@
 
         default_layer {
             bindings = <
-   &mm_pdequal          &mm_pdn1    &mm_pdn2   &mm_pdn3   &mm_pdn4  &mm_pdn5              &tog 1                                                                    &mo 3 &mm_pdn6 &mm_pdn7  &mm_pdn8     &mm_pdn9       &mm_pdn0  &mm_pdminus
-       &kp TAB     &kp SEMICOLON   &kp COMMA    &kp DOT      &kp P     &kp Y              &none                                                                     &none    &kp F    &kp G     &kp C        &kp R          &kp L    &kp SLASH
-       &kp ESC             &kp A       &kp O      &kp E      &kp U     &kp I              &none      &kp LCTRL  &kp LALT     &kp LGUI  &kp RCTRL      &none    &kp D    &kp H     &kp T        &kp N          &kp S    &kp MINUS
-    &kp DELETE  &kp SINGLE_QUOTE       &kp Q      &kp J      &kp K     &kp X               &kp HOME    &kp PG_UP         &kp B    &kp M     &kp W        &kp V          &kp Z    &kp RSHFT
-         &mo 2       &mm_pdgrave    &kp CAPS   &kp LEFT  &kp RIGHT               &kp LEFT_SHIFT  &kp BACKSPACE   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE               &kp UP  &kp DOWN   &mm_pdlbkt  &kp BACKSLASH        &mo 2
+   &mm_pdequal          &mm_pdn1   &mm_pdn2  &mm_pdn3   &mm_pdn4  &mm_pdn5          &tog 1                                                       &mo 3  &mm_pdn6    &mm_pdn7     &mm_pdn8        &mm_pdn9         &mm_pdn0  &mm_pdminus
+       &kp TAB     &kp SEMICOLON  &kp COMMA   &kp DOT      &kp P     &kp Y           &none                                                       &none     &kp F       &kp G        &kp C           &kp R            &kp L    &kp SLASH
+       &kp ESC             &kp A      &kp O     &kp E      &kp U     &kp I           &none  &kp LCTRL  &kp LALT         &kp LGUI  &kp RCTRL      &none     &kp D       &kp H        &kp T           &kp N            &kp S    &kp MINUS
+    &kp DELETE  &kp SINGLE_QUOTE      &kp Q     &kp J      &kp K     &kp X                             &kp HOME        &kp PG_UP                           &kp B       &kp M        &kp W           &kp V            &kp Z   &kp INSERT
+         &mo 2       &mm_pdgrave   &kp CAPS  &kp LEFT  &kp RIGHT            &kp LEFT_SHIFT   &kp BSPC   &kp END        &kp PG_DN  &kp ENTER  &kp SPACE                &kp UP     &kp DOWN      &mm_pdlbkt    &kp BACKSLASH        &mo 2
             >;
         };
 
         layer_keypad {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &trans                                                                 &mo 3  &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-   &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                 &none   &kp Y   &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_MINUS   &kp BSLH
-   &kp ESC      &kp A     &kp S     &kp D      &kp F   &kp G               &none  &kp LCTRL  &kp LALT     &kp LGUI  &kp RCTRL      &none   &kp H   &kp KP_N4     &kp KP_N5      &kp KP_N6      &kp KP_PLUS    &kp SQT
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                &kp HOME    &kp PG_UP        &kp N   &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_ENTER  &kp RSHFT
-     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC    &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp KP_N0              &kp UP      &kp DOWN     &kp KP_DOT         &kp RBKT      &mo 2
+     &kp EQUAL            &kp N1     &kp N2    &kp N3     &kp N4    &kp N5          &trans                                                       &mo 3    &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY    &kp MINUS
+       &kp TAB             &kp Q      &kp W     &kp E      &kp R     &kp T           &none                                                       &none     &kp Y   &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_MINUS     &kp BSLH
+       &kp ESC             &kp A      &kp S     &kp D      &kp F     &kp G           &none  &kp LCTRL  &kp LALT         &kp LGUI  &kp RCTRL      &none     &kp H   &kp KP_N4     &kp KP_N5      &kp KP_N6      &kp KP_PLUS      &kp SQT
+     &kp LSHFT             &kp Z      &kp X     &kp C      &kp V     &kp B                             &kp HOME        &kp PG_UP                           &kp N   &kp KP_N1     &kp KP_N2      &kp KP_N3     &kp KP_ENTER    &kp RSHFT
+         &mo 2         &kp GRAVE   &kp CAPS  &kp LEFT  &kp RIGHT                  &kp BSPC    &kp DEL   &kp END        &kp PG_DN  &kp ENTER  &kp KP_N0                &kp UP      &kp DOWN     &kp KP_DOT         &kp RBKT        &mo 2
             >;
         };
 
         layer_fn {
             bindings = <
- &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6            &tog 1                                                   &mo 3  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
- &trans  &trans  &trans  &trans  &trans  &trans             &none                                                   &none  &trans  &trans  &trans   &trans   &trans   &trans
- &trans  &trans  &trans  &trans  &trans  &trans             &none  &trans  &trans    &trans  &trans   &none  &trans  &trans  &trans   &trans   &trans   &trans
- &trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans   &trans   &trans   &trans
- &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans                  &trans  &trans  &trans          &trans  &trans   &trans   &trans   &trans
+        &kp F1            &kp F2     &kp F3    &kp F4     &kp F5    &kp F6          &tog 1                                                       &mo 3    &kp F7      &kp F8        &kp F9        &kp F10          &kp F11      &kp F12
+        &trans            &trans     &trans    &trans     &trans    &trans           &none                                                       &none    &trans      &trans        &trans         &trans           &trans       &trans
+        &trans            &trans     &trans    &trans     &trans    &trans           &none     &trans    &trans           &trans     &trans      &none    &trans      &trans        &trans         &trans           &trans       &trans
+        &trans            &trans     &trans    &trans     &trans    &trans                               &trans           &trans                          &trans      &trans        &trans         &trans           &trans       &trans
+        &trans            &trans     &trans    &trans     &trans                    &trans     &trans    &trans           &trans     &trans     &trans                &trans        &trans         &trans           &trans       &trans
             >;
         };
 
         layer_mod {
             bindings = <
-  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &none                                                                              &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &none
-  &none         &none         &none         &none         &none         &none                       &bootloader                                                                         &bootloader         &none         &none         &none         &none         &none   &none
-  &none         &none         &none         &none         &none         &none            &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR   &none    &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5         &none         &none         &none         &none         &none   &none
-  &none         &none         &none         &none         &none         &none                               &none         &none               &none         &none         &none         &none         &none   &none
-  &none         &none         &none    &bl BL_INC    &bl BL_DEC                                 &rgb_ug RGB_TOG  &bl BL_TOG   &none                       &none  &bl BL_TOG         &rgb_ug RGB_TOG                  &bl BL_INC    &bl BL_DEC         &none         &none   &none
+         &none      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                   &none                                                                &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &none
+         &none             &none         &none         &none         &none         &none             &bootloader                                                           &bootloader         &none         &none         &none         &none         &none   &none
+         &none             &none         &none         &none         &none         &none  &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR   &none    &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5         &none         &none         &none         &none         &none   &none
+         &none             &none         &none         &none         &none         &none                                       &none         &none                                             &none         &none         &none         &none         &none   &none
+         &none             &none         &none    &bl BL_INC    &bl BL_DEC                       &rgb_ug RGB_TOG  &bl BL_TOG   &none         &none  &bl BL_TOG         &rgb_ug RGB_TOG                  &bl BL_INC    &bl BL_DEC         &none         &none   &none
             >;
         };
 
