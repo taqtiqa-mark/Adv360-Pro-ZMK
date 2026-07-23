@@ -28,7 +28,8 @@
     mm_pdn0: mm_pdn0 { compatible = "zmk,behavior-mod-morph";  #binding-cells = <0>; bindings = <&kp EXCL>, <&kp N8>; mods = <(MOD_LSFT|MOD_RSFT)>; };
     mm_pdminus: mm_pdminus { compatible = "zmk,behavior-mod-morph";  #binding-cells = <0>; bindings = <&kp HASH>, <&kp GRAVE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
     mm_pdgrave: mm_pdgrave { compatible = "zmk,behavior-mod-morph";  #binding-cells = <0>; bindings = <&kp DOLLAR>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-    mm_pdlbkt: mm_pdlbkt { compatible = "zmk,behavior-mod-morph";  #binding-cells = <0>; bindings = <&kp AT_SIGN>, <&invert CARET>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+    mm_pdlbkt: mm_pdlbkt { compatible = "zmk,behavior-mod-morph";  #binding-cells = <0>; bindings = <&kp AT_SIGN>, <&kp CARET>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+
 
     hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
